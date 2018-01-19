@@ -6,10 +6,13 @@ import (
 )
 
 type LongPollingController struct {
-	baseController
+	BaseController
 }
 
 func (this *LongPollingController) Join()  {
+	this.SetSession("user",11113613154)
+	fmt.Println(this.GetSession("user"))
+
 	uanme:=this.GetString("uname")
 	if len(uanme)==0{
 		this.Redirect("/",302)

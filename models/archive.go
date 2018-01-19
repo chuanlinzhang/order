@@ -1,6 +1,12 @@
 package models
 
-import "container/list"
+import (
+	"container/list"
+
+)
+
+
+
 
 const (
 	EVENT_JOIN    = iota
@@ -33,5 +39,8 @@ func GetEvents(lastReceived int) []Event  {
 			events=append(events,e)
 		}
 	}
+
 	return events
 }
+
+

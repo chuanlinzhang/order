@@ -23,12 +23,12 @@ func init() {
 
 }
 
-type baseController struct {
+type BaseController struct {
 	beego.Controller
 	i18n.Locale
 }
 
-func (this *baseController)Prepare()  {
+func (this *BaseController)Prepare()  {
 	this.Lang = ""
 	al:=this.Ctx.Request.Header.Get("Accept-Language")//获取浏览器的请求头来判断语言
 	fmt.Println("al=", al)
@@ -46,7 +46,7 @@ func (this *baseController)Prepare()  {
 }
 
 type AppController struct {
-	baseController
+	BaseController
 }
 
 func (this *AppController) Get()  {
